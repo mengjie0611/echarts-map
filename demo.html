@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding:0;margin:0;
+        }
+        .describe{
+            padding:0 3%;
+            color: #666666;
+            font-family: 'SourceHanSansCN-Regular';
+            font-size:12px;
+        }
+    </style>
+        <script>
+            (function () {
+                var html = document.documentElement;
+
+                function onWindowResize () {
+                    html.style.fontSize = html.getBoundingClientRect().width / 20 + "px";
+                }
+
+                window.addEventListener("resize", onWindowResize);
+                onWindowResize();
+            })();
+        </script>
+</head>
+<body>
+    <div id="my-app">
+            <swich-tab  @select-event="selectEvent"></swich-tab>
+            <div id="map"></div>
+            <div class="describe">注：广东不含深圳、浙江不含宁波、山东不含青岛、福建不含厦门、辽宁不含大同</div>
+    </div>
+    <script src="./echarts-min.js"></script>
+    <script src="./vue.dev.js"></script>
+    <script src="./jquery.min.js"></script>
+    <script src="./httpvue-loader.js"></script>
+    <script src="./demo.js"></script>
+</body>
+</html>
