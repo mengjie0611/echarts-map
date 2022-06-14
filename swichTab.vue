@@ -1,6 +1,6 @@
 <template>
   <div class="swicth">
-      <div class="titleBox">
+      <!-- <div class="titleBox">
             <div :class="index === current ? 'zxc active':'zxc'" v-for="(item,index) in list" :key="item.name" @click="handleClick(index)">
                 <div class="center">
                     <div class="name">{{item.name}}</div>
@@ -14,7 +14,8 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
+        <input type="text" v-model="address">  <button type="submit" @click="handleClick1()">确认</button>
   </div>
 </template>
 
@@ -23,6 +24,7 @@ module.exports = {
     data: function () {
         return {
             current:0,
+            address:"全国",
             list: [
                 {name:'融资公司1',homeCount1:'家次', rate1:'较上年同期',homeCount:100, rate:28},
                 {name:'融资公司',homeCount:100, rate:28,homeCount1:100, rate1:28},
@@ -33,6 +35,9 @@ module.exports = {
         handleClick(index){
             this.current = index;
             this.$emit("select-event", index);
+        },
+        handleClick1(){
+            this.$emit("select-event", this.address);
         }
   },
 //   mounted() {

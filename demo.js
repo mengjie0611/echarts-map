@@ -91,7 +91,7 @@ new Vue({
         //tab切换回调
         selectEvent (data) {
             console.log(data)
-            this.mapSource = '北京'
+            this.mapSource = data
             this.mapInit(1,1111)
         },
 
